@@ -55,26 +55,26 @@ export default function Restaurant() {
         <img src={restaurantImg} alt="Sankofa Kitchen at dusk" className="absolute inset-0 w-full h-full object-cover animate-ken-burns" />
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="relative h-full flex flex-col items-center justify-center text-center container-prose text-background">
-          <div className="eyebrow text-primary-glow mb-4">A celebrated table · One Michelin Key</div>
+          <div className="eyebrow text-primary-glow mb-4">A celebrated table · Navrongo's finest kitchen</div>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1] max-w-4xl">Sankofa Kitchen</h1>
-          <p className="mt-6 text-lg max-w-xl text-background/85">Under the palm canopy, on the water's edge — Chef Selasi Mensah's seasonal tasting menu.</p>
+          <p className="mt-6 text-lg max-w-xl text-background/85">Under the palm canopy — Chef Selasi Mensah's seasonal tasting menu.</p>
         </div>
       </section>
 
       <section className="container-prose py-24 grid lg:grid-cols-[1fr_1fr] gap-16 items-start">
         <div>
           <div className="eyebrow mb-5">The kitchen</div>
-          <h2 className="font-display text-4xl md:text-5xl mb-6 leading-[1.05]">A menu composed by the Atlantic.</h2>
+          <h2 className="font-display text-4xl md:text-5xl mb-6 leading-[1.05]">A menu composed by the Sahel.</h2>
           <p className="text-muted-foreground leading-relaxed text-lg mb-8">
             Chef Selasi Mensah's eight-course tasting menu changes with the seasons — grilled red snapper and coconut rice in the rains, smoked guinea fowl with millet in harmattan, baobab sorbet to close. Each plate finished tableside, paired with a wine from our cellar.
           </p>
 
           <div className="grid grid-cols-2 gap-6">
             {[
-              ["Menu Sankofa", "Eight-course tasting · $215"],
-              ["Menu Akwaaba", "Five-course coast-to-plate · $135"],
+              ["Menu Sankofa", "Eight-course tasting · \u20b5550"],
+              ["Menu Akwaaba", "Five-course farm-to-plate · \u20b5350"],
               ["À la carte", "Available 19:00 – 22:30"],
-              ["Wine Pairing", "Sommelier-led · from $90"],
+              ["Wine Pairing", "Sommelier-led · from \u20b5180"],
             ].map(([t, d]) => (
               <div key={t} className="border-t border-border pt-4">
                 <div className="font-display text-xl">{t}</div>
@@ -101,7 +101,7 @@ export default function Restaurant() {
             </div>
           ) : (
             <form onSubmit={submit} className="space-y-6">
-              <h3 className="font-display text-3xl mb-2">An evening at the water's edge</h3>
+              <h3 className="font-display text-3xl mb-2">An evening under the palms</h3>
 
               <div>
                 <label className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground">Date</label>

@@ -12,10 +12,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 
 const treatments = [
-  { id: "shea", name: "Shea & Baobab Ritual", duration: "90 min", price: 240, desc: "A warming full-body massage with unrefined Northern shea butter and baobab seed oil." },
-  { id: "stone", name: "Volcanic Stone Therapy", duration: "75 min", price: 210, desc: "Heated basalt stones eased along the meridian lines — for travel fatigue and deep stillness." },
-  { id: "facial", name: "Hibiscus & Gold Facial", duration: "60 min", price: 180, desc: "A signature lift with 24k gold leaf and Ghanaian hibiscus — radiance in a single sitting." },
-  { id: "couples", name: "Couples' Cliffside Suite", duration: "120 min", price: 540, desc: "Side-by-side ritual in the cliffside suite — soaking tub, candlelight, glass of champagne." },
+  { id: "shea", name: "Shea & Baobab Ritual", duration: "90 min", price: 450, desc: "A warming full-body massage with unrefined Northern shea butter and baobab seed oil." },
+  { id: "stone", name: "Volcanic Stone Therapy", duration: "75 min", price: 380, desc: "Heated basalt stones eased along the meridian lines — for travel fatigue and deep stillness." },
+  { id: "facial", name: "Hibiscus & Gold Facial", duration: "60 min", price: 300, desc: "A signature lift with 24k gold leaf and Ghanaian hibiscus — radiance in a single sitting." },
+  { id: "couples", name: "Couples' Garden Suite", duration: "120 min", price: 950, desc: "Side-by-side ritual in the garden suite — soaking tub, candlelight, glass of champagne." },
 ];
 
 export default function Spa() {
@@ -62,7 +62,7 @@ export default function Spa() {
         <div className="relative h-full flex flex-col items-center justify-center text-center text-background container-prose">
           <div className="eyebrow text-primary-glow mb-4">Asaase Spa</div>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl max-w-3xl leading-[1]">A ritual, by candlelight.</h1>
-          <p className="mt-6 text-lg max-w-xl text-background/85">Carved into the cliffside. Composed around the Ghanaian seasons.</p>
+          <p className="mt-6 text-lg max-w-xl text-background/85">Rooted in Northern tradition. Composed around the Ghanaian seasons.</p>
         </div>
       </section>
 
@@ -86,7 +86,7 @@ export default function Spa() {
                     </div>
                   </div>
                   <div className="text-right shrink-0">
-                    <div className="font-display text-2xl">${tr.price}</div>
+                    <div className="font-display text-2xl">\u20b5{tr.price}</div>
                   </div>
                 </div>
               </button>
@@ -110,7 +110,7 @@ export default function Spa() {
               <h3 className="font-display text-3xl">{t.name}</h3>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2"><Clock className="w-3.5 h-3.5" /> {t.duration}</span>
-                <span>${t.price}</span>
+                <span>\u20b5{t.price}</span>
               </div>
 
               <div>

@@ -17,11 +17,11 @@ const BOOKING_DRAFT_KEY = "SK_booking_draft";
 const steps = ["Dates & Room", "Extras", "Guest Details", "Payment", "Confirmation"];
 
 const extras = [
-  { id: "breakfast", name: "Breakfast Anywhere", desc: "Served on your terrace, by the pool, or aboard the yacht.", price: 75 },
-  { id: "spa", name: "Couples' Spa Ritual", desc: "Ninety minutes for two — chestnut & olive oil massage.", price: 480 },
-  { id: "riva", name: "Private yacht Tour", desc: "Two-hour lake tour at dawn or dusk, prosecco aboard.", price: 650 },
-  { id: "chef", name: "Private Chef Dinner", desc: "Five-course tasting menu in your suite by Chef Selim Yıldız.", price: 1200 },
-  { id: "transfer", name: "Chauffeured Transfer", desc: "Malpensa or Linate, in a vintage Mercedes 600.", price: 380 },
+  { id: "breakfast", name: "Breakfast Anywhere", desc: "Served on your terrace, by the pool, or in the gardens.", price: 75 },
+  { id: "spa", name: "Couples' Spa Ritual", desc: "Ninety minutes for two — shea & baobab oil massage.", price: 480 },
+  { id: "paga", name: "Paga Crocodile Excursion", desc: "Chauffeured guided tour to the sacred Paga sanctuary and Pikworo slave camp.", price: 350 },
+  { id: "chef", name: "Private Chef Dinner", desc: "Five-course Sahel tasting menu in your suite by our head chef.", price: 900 },
+  { id: "transfer", name: "Chauffeured Transfer", desc: "Tamale airport pickup in a comfortable 4x4.", price: 380 },
 ];
 
 const today = new Date(new Date().setHours(0, 0, 0, 0));

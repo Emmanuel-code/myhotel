@@ -53,7 +53,7 @@ export default function Events() {
 
       <section className="container-prose py-24 grid md:grid-cols-3 gap-12">
         {[
-          ["Intimate", "Up to 30 guests · Garden gazebo or terrace overlooking the serene lake."],
+          ["Intimate", "Up to 30 guests · Garden gazebo or terrace overlooking the landscaped gardens."],
           ["Private", "30 – 80 guests · Exclusive use of the banquet pavilion and landscaped grounds."],
           ["Grand", "80 – 250 guests · Full estate buyout, ballroom, gardens, and VIP suites."],
         ].map(([t, d]) => (
@@ -75,7 +75,7 @@ export default function Events() {
             <div className="mt-10 space-y-3 text-sm">
               <div className="flex justify-between border-b border-border pb-3"><span className="text-muted-foreground">Events Director</span><span>Ama Owusu</span></div>
               <div className="flex justify-between border-b border-border pb-3"><span className="text-muted-foreground">Phone</span><span>+233 (0) 50 123 4567</span></div>
-              <div className="flex justify-between border-b border-border pb-3"><span className="text-muted-foreground">Email</span><span>events@SKhotel.com</span></div>
+              <div className="flex justify-between border-b border-border pb-3"><span className="text-muted-foreground">Email</span><span>events@yourhotel.com</span></div>
             </div>
           </div>
 

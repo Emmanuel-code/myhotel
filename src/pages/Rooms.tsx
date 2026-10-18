@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { RotateCcw } from "lucide-react";
 
 const categories = ["All", "Suite", "Villa", "Penthouse", "Deluxe"] as const;
-const views = ["All", "Ocean", "Garden", "City"] as const;
+const views = ["All", "Garden", "Pool", "City"] as const;
 
 export default function Rooms() {
   const [cat, setCat] = useState<typeof categories[number]>("All");
@@ -41,7 +41,7 @@ export default function Rooms() {
         <SectionHeading
           eyebrow="Accommodations"
           title="Suites, Villas & Penthouses"
-          copy="Forty-two residences in the historic main villa and the gardens beyond. Each restored room-by-room across seven years."
+          copy="Thirty-plus rooms, suites and villas set in landscaped gardens — designed for comfort, quiet and Northern warmth."
         />
       </section>
 
