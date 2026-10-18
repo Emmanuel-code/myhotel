@@ -99,11 +99,6 @@ export default function Staff() {
     } catch (err: any) {
       toast.error(err.message || "Failed to create staff account.");
     } finally {
-          role,
-          profile: { first_name: firstName, last_name: lastName, email },
-        },
-      ]);
-    } finally {
       setCreating(false);
     }
   };
