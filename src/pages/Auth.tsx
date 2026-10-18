@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
+import { DEMO_MODE } from "@/lib/demo";
 import { cn } from "@/lib/utils";
 import { Eye, EyeOff, Check, X } from "lucide-react";
 
@@ -18,7 +19,7 @@ export default function Auth() {
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const redirect = params.get("redirect") || "/dashboard";
-  const { user } = useAuth();
+  const { user, loginAsDemo } = useAuth();
 
   useEffect(() => {
     if (user) navigate(redirect, { replace: true });
@@ -113,6 +114,53 @@ export default function Auth() {
               </button>
             ))}
           </div>
+
+          {/* Role explorer — lets prospects try every user role with one click */}
+          {DEMO_MODE && (
+            <div className="mb-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20">
+              <div className="text-[10px] uppercase tracking-[0.25em] text-amber-300 font-semibold mb-2 flex items-center justify-between">
+                <span>👋 Explore every role</span>
+                <span className="text-[9px] bg-amber-500/20 px-2 py-0.5 rounded text-amber-400">No sign-up needed</span>
+              </div>
+              <p className="text-xs text-muted-foreground mb-3">
+                Step into the owner's dashboard, front desk, housekeeping or a guest account — one click, no sign-up:
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => { loginAsDemo("owner"); navigate("/admin"); }}
+                  className="p-2 text-left bg-background border border-border rounded-lg hover:border-amber-400 text-xs transition-colors"
+                >
+                  <div className="font-medium text-foreground">👑 Hotel Owner / GM</div>
+                  <div className="text-[10px] text-muted-foreground">All Admin Portals</div>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { loginAsDemo("front_desk"); navigate("/admin/front-desk"); }}
+                  className="p-2 text-left bg-background border border-border rounded-lg hover:border-amber-400 text-xs transition-colors"
+                >
+                  <div className="font-medium text-foreground">🛎️ Front Desk</div>
+                  <div className="text-[10px] text-muted-foreground">Check-in / Keys</div>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { loginAsDemo("housekeeping"); navigate("/admin/housekeeping"); }}
+                  className="p-2 text-left bg-background border border-border rounded-lg hover:border-amber-400 text-xs transition-colors"
+                >
+                  <div className="font-medium text-foreground">🧹 Housekeeping</div>
+                  <div className="text-[10px] text-muted-foreground">Room Turnovers</div>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { loginAsDemo("guest"); navigate("/dashboard"); }}
+                  className="p-2 text-left bg-background border border-border rounded-lg hover:border-amber-400 text-xs transition-colors"
+                >
+                  <div className="font-medium text-foreground">👤 VIP Guest</div>
+                  <div className="text-[10px] text-muted-foreground">Stays &amp; Invoices</div>
+                </button>
+              </div>
+            </div>
+          )}
 
           <button
             type="button"

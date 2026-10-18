@@ -16,49 +16,49 @@ export type DemoAccount = {
 export const DEMO_ACCOUNTS: Record<DemoRole, DemoAccount> = {
   owner: {
     id: "demo-owner-001",
-    email: "owner@SKhotel.com",
+    email: "owner@yourhotel.com",
     first_name: "Kwame",
-    last_name: "SK",
+    last_name: "Ansah",
     role: "owner",
   },
   gm: {
     id: "demo-gm-002",
-    email: "gm@SKhotel.com",
+    email: "gm@yourhotel.com",
     first_name: "Ama",
     last_name: "Owusu",
     role: "gm",
   },
   front_desk: {
     id: "demo-frontdesk-003",
-    email: "frontdesk@SKhotel.com",
+    email: "frontdesk@yourhotel.com",
     first_name: "Kofi",
     last_name: "Mensah",
     role: "front_desk",
   },
   housekeeping: {
     id: "demo-housekeeping-004",
-    email: "housekeeping@SKhotel.com",
+    email: "housekeeping@yourhotel.com",
     first_name: "Akosua",
     last_name: "Addae",
     role: "housekeeping",
   },
   restaurant: {
     id: "demo-restaurant-005",
-    email: "restaurant@SKhotel.com",
-    first_name: "Chef",
-    last_name: "Selim",
+    email: "restaurant@yourhotel.com",
+    first_name: "Selasi",
+    last_name: "Mensah",
     role: "restaurant",
   },
   spa: {
     id: "demo-spa-006",
-    email: "spa@SKhotel.com",
+    email: "spa@yourhotel.com",
     first_name: "Esi",
     last_name: "Baidoo",
     role: "spa",
   },
   marketing: {
     id: "demo-marketing-007",
-    email: "marketing@SKhotel.com",
+    email: "marketing@yourhotel.com",
     first_name: "Yaw",
     last_name: "Boateng",
     role: "marketing",
@@ -94,7 +94,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [demoUser, setDemoUser] = useState<DemoAccount | null>(() => {
-    if (!DEMO_MODE || import.meta.env.PROD) {
+    if (!DEMO_MODE) {
       try { localStorage.removeItem("SK_demo_user"); } catch { }
       return null;
     }
@@ -108,7 +108,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (DEMO_MODE && !import.meta.env.PROD && demoUser) {
+    if (DEMO_MODE && demoUser) {
       setUser({
         id: demoUser.id,
         email: demoUser.email,
