@@ -158,6 +158,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signOut = async () => {
     localStorage.removeItem("SK_demo_user");
+    try { localStorage.removeItem("SK_demo_claimed"); } catch { /* ignore */ }
     setDemoUser(null);
     setUser(null);
     setSession(null);

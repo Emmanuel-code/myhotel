@@ -25,10 +25,10 @@ export default function Staff() {
         setRows((roles ?? []).map((r: any) => ({ ...r, profile: byId[r.user_id] })));
       } else {
         setRows([
-          { id: "r-1", user_id: "demo-owner-001", role: "owner", profile: { first_name: "Kwame", last_name: "SK", email: "owner@SKhotel.com" } },
-          { id: "r-2", user_id: "demo-gm-002", role: "gm", profile: { first_name: "Ama", last_name: "Owusu", email: "gm@SKhotel.com" } },
-          { id: "r-3", user_id: "demo-frontdesk-003", role: "front_desk", profile: { first_name: "Kofi", last_name: "Mensah", email: "frontdesk@SKhotel.com" } },
-          { id: "r-4", user_id: "demo-housekeeping-004", role: "housekeeping", profile: { first_name: "Akosua", last_name: "Addae", email: "housekeeping@SKhotel.com" } },
+          { id: "r-1", user_id: "demo-owner-001", role: "owner", profile: { first_name: "Kwame", last_name: "Ansah", email: "owner@yourhotel.com" } },
+          { id: "r-2", user_id: "demo-gm-002", role: "gm", profile: { first_name: "Ama", last_name: "Owusu", email: "gm@yourhotel.com" } },
+          { id: "r-3", user_id: "demo-frontdesk-003", role: "front_desk", profile: { first_name: "Kofi", last_name: "Mensah", email: "frontdesk@yourhotel.com" } },
+          { id: "r-4", user_id: "demo-housekeeping-004", role: "housekeeping", profile: { first_name: "Akosua", last_name: "Addae", email: "housekeeping@yourhotel.com" } },
         ]);
       }
     } catch {
@@ -153,7 +153,7 @@ export default function Staff() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="staff@SKhotel.com"
+              placeholder="staff@yourhotel.com"
               required
               className="w-full mt-1.5 bg-black/40 border border-white/10 text-neutral-100 px-3 py-2 text-sm focus:border-amber-200"
             />

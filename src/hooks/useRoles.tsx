@@ -19,7 +19,9 @@ export function useRoles() {
 
     // If logged in via Demo Account (permitted whenever DEMO_MODE is true, incl. production demo builds)
     if (import.meta.env.VITE_DEMO_MODE === "true" && demoUser) {
-      if (demoUser.role === "owner") {
+      let claimed = false;
+      try { claimed = localStorage.getItem("SK_demo_claimed") === "true"; } catch { /* ignore */ }
+      if (claimed || demoUser.role === "owner") {
         setRoles(["owner", "gm", "front_desk", "housekeeping", "restaurant", "spa", "marketing"]);
       } else if (demoUser.role === "gm") {
         setRoles(["gm", "front_desk", "housekeeping", "restaurant", "spa", "marketing"]);

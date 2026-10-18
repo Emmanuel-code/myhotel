@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { useRoles } from "@/hooks/useRoles";
+import { DEMO_MODE } from "@/lib/demo";
 import { toast } from "sonner";
 
 export default function ClaimOwnership() {
@@ -17,6 +18,14 @@ export default function ClaimOwnership() {
 
   const claim = async () => {
     setBusy(true);
+    if (DEMO_MODE) {
+      // Demo mode: grant ownership locally, no backend needed
+      try { localStorage.setItem("SK_demo_claimed", "true"); } catch { /* ignore */ }
+      setBusy(false);
+      toast.success("Ownership claimed — welcome! You now have full operational access.");
+      navigate("/admin");
+      return;
+    }
     const { data, error } = await supabase.functions.invoke("claim-ownership");
     setBusy(false);
     if (error) return toast.error(error.message);

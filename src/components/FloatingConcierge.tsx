@@ -81,9 +81,9 @@ export default function FloatingConcierge() {
         const lower = text.toLowerCase();
         let fallback = "Thank you for asking! Your Hotel in Navrongo, Ghana offers Executive Suites and Villas, gourmet Sahelian & Continental cuisine, full spa rituals, and flexible payment (Paystack & Pay in Person). Our front desk is available 24/7 at +233 (0) 50 123 4567.";
         if (lower.includes("suite") || lower.includes("room") || lower.includes("price") || lower.includes("villa"))
-          fallback = "We offer Executive Suites, Deluxe Rooms, Lake Suites, and Garden Villas from ₵850/night. Explore full photos and amenities on our Suites & Villas page, or reserve online anytime!";
+          fallback = "We offer Executive Suites, Deluxe Rooms, and Garden Villas from ₵220/night. Explore full photos and amenities on our Suites & Villas page, or reserve online anytime!";
         else if (lower.includes("dining") || lower.includes("food") || lower.includes("restaurant") || lower.includes("breakfast"))
-          fallback = "The Your Restaurant & Lounge serves authentic Northern Ghanaian specialties alongside Continental gastronomy and curated wines. Breakfast can be delivered directly to your terrace.";
+          fallback = "Sankofa Kitchen serves authentic Northern Ghanaian specialties alongside Continental gastronomy and curated wines. Breakfast can be delivered directly to your terrace.";
         else if (lower.includes("pay") || lower.includes("momo") || lower.includes("paystack"))
           fallback = "You can pay securely online with Paystack (MTN Mobile Money, Telecel Cash, Visa/Mastercard) or choose 'Pay in Person' — Cash, MoMo, or POS upon arrival at our front desk.";
         else if (lower.includes("attraction") || lower.includes("navrongo") || lower.includes("cathedral") || lower.includes("paga"))
