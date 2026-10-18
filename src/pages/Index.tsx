@@ -129,7 +129,7 @@ export default function Index() {
       {/* EXPERIENCES — staggered editorial grid */}
       <section className="bg-secondary py-32 mt-16">
         <div className="container-prose">
-          <SectionHeading eyebrow="Tours & Experiences" title="Explore Northern Heritage" copy="Curated local excursions, cultural experiences, and signature moments arranged by our front desk and tour concierge." />
+          <SectionHeading eyebrow="Tours & Experiences" title="Explore Local Heritage" copy="Curated local excursions, cultural experiences, and signature moments arranged by our front desk and tour concierge." />
 
           <div className="grid md:grid-cols-12 gap-6 md:gap-8">
             {experiencesFor(brand.town).map((e, i) => {
@@ -159,7 +159,7 @@ export default function Index() {
       <section className="container-prose py-32 space-y-32">
         <Pillar
           eyebrow="Dining & Lounge"
-          title="Your Restaurant & Terrace"
+          title="Sankofa Restaurant & Terrace"
           copy="Delicious local Ghanaian favorites, grilled guinea fowl, and rich continental cuisine prepared with fresh local produce."
           cta={{ to: "/restaurant", label: "View Restaurant Menu" }}
           image={restaurantImg}
@@ -168,7 +168,7 @@ export default function Index() {
           reverse
           eyebrow="Wellness & Relaxation"
           title="Poolside Oasis & Rejuvenation"
-          copy="Unwind under the Sahel sun. Enjoy revitalizing wellness treatments, cool poolside drinks, and calm evening ambiance."
+          copy="Unwind under the golden sun. Enjoy revitalizing wellness treatments, cool poolside drinks, and calm evening ambiance."
           cta={{ to: "/spa", label: "Discover Wellness" }}
           image={spaImg}
         />

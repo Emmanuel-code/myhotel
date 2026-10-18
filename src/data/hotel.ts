@@ -33,7 +33,7 @@ export const rooms: Room[] = [
     capacity: 2,
     beds: "King",
     image: lakeSuite,
-    shortDescription: "Spacious luxury suite with private balcony, plush lounge area, and premium Northern artisanal finishes.",
+    shortDescription: "Spacious luxury suite with private balcony, plush lounge area, and premium artisanal finishes.",
     description:
       "Our premier suite honors the rich heritage of Ghana. Featuring an expansive master bedroom, separate executive workspace, polished terrazzo bath with rain shower, and a private balcony overlooking the tranquil gardens.",
     amenities: ["Private balcony", "High-speed Wi-Fi", "Smart TV & DSTV", "Mini bar & coffee station", "Executive work desk", "24/7 Room service"],
@@ -48,14 +48,14 @@ export const rooms: Room[] = [
     capacity: 3,
     beds: "King + Single",
     image: gardenVilla,
-    shortDescription: "Secluded garden chalet surrounded by lush bougainvillea and serene Northern greenery.",
+    shortDescription: "Secluded garden chalet surrounded by lush bougainvillea and serene tropical greenery.",
     description:
       "Designed for absolute peace and relaxation, the Savannah Garden Chalet provides generous living space, outdoor patio seating, and silent climate control ideal for business leaders and travelers seeking privacy.",
     amenities: ["Private garden patio", "Climate control AC", "Ensuite rain shower", "Complimentary hot breakfast", "Dedicated concierge"],
   },
   {
     id: "royal-penthouse",
-    name: "Your Penthouse",
+    name: "Grand Penthouse",
     category: "Penthouse",
     view: "City",
     price: 850,
@@ -114,7 +114,7 @@ export const reviews = [
 export const accolades = [
   "Premier Luxury Hotel in Ghana",
   "Ghana Tourism Authority Certified",
-  "Upper East Excellence in Hospitality",
+  "Excellence in Hospitality",
   "Top Rated Conference & Event Venue",
   "24/7 Secured & Solar Backed Power",
 ];

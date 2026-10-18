@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="eyebrow text-primary mb-5">Upper East Region</div>
+            <div className="eyebrow text-primary mb-5">Find Us</div>
             <p className="text-sm text-background/70 mb-4 leading-relaxed">
               Ideally situated for travelers visiting {brand.town}&apos;s landmarks, cultural sites, and business districts.
             </p>

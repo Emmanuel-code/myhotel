@@ -10,6 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
+import { useHotelBrand } from "@/hooks/useHotelBrand";
 import { supabase } from "@/integrations/supabase/client";
 import { saveLocalFallback } from "@/lib/demo";
 
@@ -27,6 +28,7 @@ const extras = [
 const today = new Date(new Date().setHours(0, 0, 0, 0));
 
 export default function Booking() {
+  const { brand } = useHotelBrand();
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
@@ -457,7 +459,7 @@ export default function Booking() {
                       No online charge required today. Your suite will be reserved and held until your check-in date.
                     </p>
                     <p className="text-xs text-muted-foreground">
-                      Please settle your total bill (₵{total.toLocaleString()}) at the reception upon arrival in Navrongo.
+                      Please settle your total bill (₵{total.toLocaleString()}) at the reception upon arrival in {brand.town}.
                     </p>
                   </div>
                 )}

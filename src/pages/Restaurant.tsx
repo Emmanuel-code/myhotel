@@ -10,10 +10,12 @@ const restaurantImg = "https://images.unsplash.com/photo-1414235077428-338989a2e
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
+import { useHotelBrand } from "@/hooks/useHotelBrand";
 
 const times = ["18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30"];
 
 export default function Restaurant() {
+  const { brand } = useHotelBrand();
   const [date, setDate] = useState<Date | undefined>();
   const [time, setTime] = useState<string>();
   const [party, setParty] = useState(2);
@@ -55,7 +57,7 @@ export default function Restaurant() {
         <img src={restaurantImg} alt="Sankofa Kitchen at dusk" className="absolute inset-0 w-full h-full object-cover animate-ken-burns" />
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="relative h-full flex flex-col items-center justify-center text-center container-prose text-background">
-          <div className="eyebrow text-primary-glow mb-4">A celebrated table · Navrongo's finest kitchen</div>
+          <div className="eyebrow text-primary-glow mb-4">A celebrated table · {brand.town}'s finest kitchen</div>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1] max-w-4xl">Sankofa Kitchen</h1>
           <p className="mt-6 text-lg max-w-xl text-background/85">Under the palm canopy — Chef Selasi Mensah's seasonal tasting menu.</p>
         </div>

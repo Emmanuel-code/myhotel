@@ -41,7 +41,7 @@ export default function Rooms() {
         <SectionHeading
           eyebrow="Accommodations"
           title="Suites, Villas & Penthouses"
-          copy="Thirty-plus rooms, suites and villas set in landscaped gardens — designed for comfort, quiet and Northern warmth."
+          copy="Thirty-plus rooms, suites and villas set in landscaped gardens — designed for comfort, quiet and Ghanaian warmth."
         />
       </section>
 
