@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bej Hotel — Luxury Lakefront Design System
+   All colors HSL. Ivory base, champagne gold accent, deep charcoal ink.
+*/
+
+@layer base {
+  :root {
+    /* Surfaces — Warm Saharan Linen & Raw Bone White */
+    --background: 38 28% 97%;          /* #FAF7F2 warm limestone linen */
+    --foreground: 25 22% 12%;          /* #251D18 deep warm obsidian ink */
+
+    --card: 38 35% 99%;                /* #FCFAF7 */
+    --card-foreground: 25 22% 12%;
+
+    --popover: 38 35% 99%;
+    --popover-foreground: 25 22% 12%;
+
+    /* Brand: Burnished Saharan Brass / Aged Gold */
+    --primary: 38 52% 48%;             /* #BA8C3B burnished gold */
+    --primary-foreground: 38 28% 97%;
+    --primary-glow: 40 75% 68%;        /* #E5B876 luminous desert gold */
+
+    --secondary: 36 24% 92%;           /* #ECE5DB warm baobab wood */
+    --secondary-foreground: 25 22% 12%;
+
+    --muted: 36 18% 89%;
+    --muted-foreground: 28 12% 42%;
+
+    --accent: 162 25% 26%;             /* deep Sahel cypress green */
+    --accent-foreground: 38 28% 97%;
+
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 38 28% 97%;
+
+    --border: 36 18% 85%;
+    --input: 36 18% 85%;
+    --ring: 38 52% 48%;
+
+    --radius: 0.25rem;
+
+    /* Gradients */
+    --gradient-gilded: linear-gradient(135deg, hsl(38 52% 48%), hsl(40 75% 68%));
+    --gradient-ink: linear-gradient(180deg, hsl(25 22% 12% / 0), hsl(25 22% 12% / 0.88));
+    --gradient-ivory: linear-gradient(180deg, hsl(38 28% 97%), hsl(36 24% 92%));
+    --gradient-sahara-hero: linear-gradient(180deg, rgba(14, 12, 10, 0.75) 0%, rgba(14, 12, 10, 0.25) 45%, rgba(14, 12, 10, 0.92) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 1px 3px hsl(25 22% 12% / 0.04), 0 10px 30px hsl(25 22% 12% / 0.06);
+    --shadow-lift: 0 14px 45px -10px hsl(25 22% 12% / 0.2);
+    --shadow-gilded: 0 20px 65px -12px hsl(38 52% 48% / 0.38);
+
+    /* Motion */
+    --ease-silk: cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-silk: all 0.7s var(--ease-silk);
+
+    --sidebar-background: 38 28% 97%;
+    --sidebar-foreground: 25 22% 12%;
+    --sidebar-primary: 38 52% 48%;
+    --sidebar-primary-foreground: 38 28% 97%;
+    --sidebar-accent: 36 24% 92%;
+    --sidebar-accent-foreground: 25 22% 12%;
+    --sidebar-border: 36 18% 85%;
+    --sidebar-ring: 38 52% 48%;
+  }
+
+  .dark {
+    /* Saharan Warm Noir */
+    --background: 28 20% 6%;           /* #0F0C09 warm obsidian dark */
+    --foreground: 38 28% 94%;          /* #F6F2EA */
+
+    --card: 28 16% 9%;                 /* #17130F rich evening leather */
+    --card-foreground: 38 28% 94%;
+
+    --popover: 28 16% 9%;
+    --popover-foreground: 38 28% 94%;
+
+    --primary: 40 70% 60%;             /* #DDA84E aged warm gold */
+    --primary-foreground: 28 20% 6%;
+    --primary-glow: 42 80% 74%;
+
+    --secondary: 28 14% 14%;           /* #231C16 */
+    --secondary-foreground: 38 28% 94%;
+
+    --muted: 28 10% 16%;
+    --muted-foreground: 36 14% 65%;
+
+    --accent: 162 25% 35%;
+    --accent-foreground: 38 28% 94%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 38 28% 94%;
+
+    --border: 28 12% 18%;
+    --input: 28 12% 18%;
+    --ring: 40 70% 60%;
+
+    --gradient-gilded: linear-gradient(135deg, hsl(40 70% 60%), hsl(42 80% 74%));
+    --gradient-ink: linear-gradient(180deg, hsl(28 20% 6% / 0), hsl(28 20% 6% / 0.94));
+    --gradient-ivory: linear-gradient(180deg, hsl(28 20% 6%), hsl(28 16% 9%));
+
+    --sidebar-background: 28 20% 6%;
+    --sidebar-foreground: 38 28% 94%;
+    --sidebar-primary: 40 70% 60%;
+    --sidebar-primary-foreground: 28 20% 6%;
+    --sidebar-accent: 28 14% 14%;
+    --sidebar-accent-foreground: 38 28% 94%;
+    --sidebar-border: 28 12% 18%;
+    --sidebar-ring: 40 70% 60%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', 'Karla', system-ui, sans-serif;
+    font-feature-settings: "ss01", "ss02";
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Playfair Display', 'Cormorant Garamond', 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+  ::selection { background: hsl(var(--primary) / 0.3); color: hsl(var(--foreground)); }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-background/70 border border-border/70;
+  }
+  .glass-dark {
+    background: rgba(15, 12, 9, 0.65);
+    backdrop-filter: blur(24px) saturate(150%);
+    border: 1px solid rgba(229, 184, 118, 0.15);
+  }
+  .gilded-text {
+    background: var(--gradient-gilded);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hairline { @apply h-px w-12 bg-primary/70; }
+  .eyebrow {
+    @apply uppercase tracking-[0.34em] text-[11px] font-medium text-primary;
+  }
+  .container-prose { @apply mx-auto max-w-7xl px-6 md:px-10; }
+  .btn-gilded {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.28em] font-medium
+           bg-primary text-primary-foreground transition-all duration-500 shadow-sm
+           hover:bg-foreground hover:text-background hover:shadow-lg hover:-translate-y-0.5;
+  }
+  .btn-ghost-line {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.28em] font-medium
+           border border-current text-foreground transition-all duration-500
+           hover:bg-foreground hover:text-background hover:-translate-y-0.5;
+  }
+  .link-underline {
+    @apply relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1
+           after:h-px after:w-full after:scale-x-0 after:origin-right after:bg-current
+           after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left;
+  }
+
+  /* Luxury Masked Text Slide-up Container */
+  .reveal-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  .reveal-text {
+    display: inline-block;
+    animation: reveal-up 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(115%);
+    opacity: 0;
+  }
+}
+
+/* Luxury Motion Keyframes */
+@keyframes reveal-up {
+  0% {
+    transform: translateY(115%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes ken-burns {
+  0%   { transform: scale(1.04) translate(0, 0); }
+  50% { transform: scale(1.15) translate(-1%, -1%); }
+  100% { transform: scale(1.15) translate(-1.5%, -1%); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-ken-burns { animation: ken-burns 18s ease-in-out infinite alternate; }
+  
+  @keyframes scroll-indicator {
+    0% { transform: translateY(-100%); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateY(200%); opacity: 0; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-ken-burns { animation: none; transform: scale(1.05); }
+  .reveal-text { animation: none; transform: none; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-ken-burns { animation: none; transform: scale(1.1); }
+}
