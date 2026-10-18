@@ -32,11 +32,14 @@ import Concierge from "./pages/admin/Concierge";
 import Notifications from "./pages/admin/Notifications";
 import ClaimOwnership from "./pages/admin/ClaimOwnership";
 import FloatingConcierge from "@/components/FloatingConcierge";
+import WelcomeModal from "@/components/WelcomeModal";
+import { BrandProvider } from "@/hooks/useHotelBrand";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <BrandProvider>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -74,9 +77,11 @@ const App = () => (
             </Routes>
           </main>
           <FloatingConcierge />
+          <WelcomeModal />
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
+    </BrandProvider>
   </QueryClientProvider>
 );
 

@@ -5,6 +5,7 @@ import { lovable } from "@/integrations/lovable/index";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
 import { DEMO_MODE } from "@/lib/demo";
+import { useHotelBrand } from "@/hooks/useHotelBrand";
 import { cn } from "@/lib/utils";
 import { Eye, EyeOff, Check, X } from "lucide-react";
 
@@ -20,6 +21,7 @@ export default function Auth() {
   const [params] = useSearchParams();
   const redirect = params.get("redirect") || "/dashboard";
   const { user, loginAsDemo } = useAuth();
+  const { brand } = useHotelBrand();
 
   useEffect(() => {
     if (user) navigate(redirect, { replace: true });
@@ -79,12 +81,12 @@ export default function Auth() {
     <div className="min-h-screen bg-background text-foreground flex flex-col justify-between p-6">
       <div className="max-w-md w-full mx-auto my-auto py-12">
         <div className="text-center mb-8">
-          <div className="eyebrow mb-4">Your Hotel · Navrongo</div>
+          <div className="eyebrow mb-4">{brand.name} · {brand.town}</div>
           <h1 className="font-display text-4xl mb-3">
             {mode === "signin" ? "Guest & Staff Portal" : "Create an Account"}
           </h1>
           <p className="text-muted-foreground text-sm">
-            Experience Navrongo&apos;s premier luxury hospitality. Sign in to manage your reservations,
+            Experience {brand.name}&apos;s premier luxury hospitality. Sign in to manage your reservations,
             dining bookings, invoices, or staff operations.
           </p>
           <div className="hairline mt-10" />

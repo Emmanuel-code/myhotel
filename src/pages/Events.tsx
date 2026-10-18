@@ -3,11 +3,13 @@ import { Check } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
-import eventsImg from "@/assets/events.jpg";
+const eventsImg = "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80"; // garden wedding table setting
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
+import { useHotelBrand } from "@/hooks/useHotelBrand";
 
 export default function Events() {
+  const { brand } = useHotelBrand();
   const [form, setForm] = useState({ name: "", email: "", phone: "", type: "Wedding", date: "", guests: "", message: "" });
   const [done, setDone] = useState(false);
 
@@ -70,7 +72,7 @@ export default function Events() {
             <div className="eyebrow mb-5">Begin a conversation</div>
             <h2 className="font-display text-4xl md:text-5xl leading-[1.05] mb-6">Tell us about your day.</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Our events team personally orchestrates every wedding, academic summit, and private reception at Your Hotel   in Navrongo. Share a few details below and we will be in touch within 24 hours.
+              Our events team personally orchestrates every wedding, academic summit, and private reception at {brand.name} in {brand.town}. Share a few details below and we will be in touch within 24 hours.
             </p>
             <div className="mt-10 space-y-3 text-sm">
               <div className="flex justify-between border-b border-border pb-3"><span className="text-muted-foreground">Events Director</span><span>Ama Owusu</span></div>

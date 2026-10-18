@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, User, Bell } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
+import { useHotelBrand } from "@/hooks/useHotelBrand";
 
 const nav = [
   { to: "/rooms", label: "Suites & Villas" },
@@ -16,6 +17,7 @@ export default function Navigation({ transparent = false }: { transparent?: bool
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const { user } = useAuth();
+  const { brand } = useHotelBrand();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -47,11 +49,11 @@ export default function Navigation({ transparent = false }: { transparent?: bool
         )}
       >
         <div className="container-prose flex items-center justify-between">
-          <Link to="/" className="group" aria-label="Your Hotel Homepage">
+          <Link to="/" className="group" aria-label={`${brand.name} Homepage`}>
             <div className="flex flex-col leading-none">
-              <span className="font-display text-2xl tracking-wide">Your Hotel</span>
+              <span className="font-display text-2xl tracking-wide">{brand.name}</span>
               <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground">
-                Navrongo · Upper East · Ghana
+                {brand.town} · Ghana
               </span>
             </div>
           </Link>

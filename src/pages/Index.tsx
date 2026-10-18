@@ -6,7 +6,8 @@ import Footer from "@/components/Footer";
 import BookingWidget from "@/components/BookingWidget";
 import RoomCard from "@/components/RoomCard";
 import SectionHeading from "@/components/SectionHeading";
-import { rooms, experiences, reviews } from "@/data/hotel";
+import { rooms, experiencesFor, reviews, attractionsFor } from "@/data/hotel";
+import { useHotelBrand } from "@/hooks/useHotelBrand";
 import heroVilla from "@/assets/hero-villa.jpg";
 import restaurantImg from "@/assets/restaurant.jpg";
 import spaImg from "@/assets/spa.jpg";
@@ -14,6 +15,7 @@ import eventsImg from "@/assets/events.jpg";
 
 export default function Index() {
   const [reviewIndex, setReviewIndex] = useState(0);
+  const { brand } = useHotelBrand();
 
   useEffect(() => {
     const id = setInterval(() => setReviewIndex((i) => (i + 1) % reviews.length), 7000);
@@ -28,7 +30,7 @@ export default function Index() {
       <section className="relative h-screen min-h-[760px] w-full overflow-hidden">
         <img
           src={heroVilla}
-          alt="Your Hotel   Navrongo at golden hour"
+          alt={`${brand.name} ${brand.town} at golden hour`}
           width={1920}
           height={1280}
           className="absolute inset-0 w-full h-full object-cover animate-ken-burns"
@@ -40,14 +42,14 @@ export default function Index() {
           <div>
             <div className="reveal-wrapper mb-6">
               <div className="reveal-text text-[10px] tracking-[0.5em] uppercase text-primary-glow font-medium">
-                Navrongo · Upper East Region · Ghana
+                {brand.town} · Ghana
               </div>
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl lg:text-[108px] leading-[0.96] max-w-5xl">
               <span className="reveal-wrapper">
                 <span className="reveal-text" style={{ animationDelay: "150ms" }}>
-                  Northern <span className="italic text-primary-glow">elegance</span>,
+                  Timeless <span className="italic text-primary-glow">elegance</span>,
                 </span>
               </span>
               <br />
@@ -63,7 +65,7 @@ export default function Index() {
                 className="reveal-text text-base md:text-lg text-white/85 max-w-xl mx-auto leading-relaxed"
                 style={{ animationDelay: "450ms" }}
               >
-                Executive suites, authentic Sahel &amp; Continental gastronomy, modern conference spaces, and unmatched northern warmth.
+                Executive suites, authentic Ghanaian &amp; Continental gastronomy, modern conference spaces, and unmatched Ghanaian warmth.
               </p>
             </div>
           </div>
@@ -91,17 +93,17 @@ export default function Index() {
       {/* INTRO */}
       <section className="container-prose pt-32 pb-24 grid lg:grid-cols-[1fr_1.4fr] gap-16 items-start">
         <div className="lg:sticky lg:top-32">
-          <div className="eyebrow mb-5">Welcome to Your Hotel  </div>
+          <div className="eyebrow mb-5">Welcome to {brand.name}</div>
           <h2 className="font-display text-5xl md:text-6xl leading-[1.05]">
-            Navrongo&apos;s premier <em className="text-primary not-italic font-light">hospitality</em> and lifestyle retreat.
+            {brand.town}&apos;s premier <em className="text-primary not-italic font-light">hospitality</em> and lifestyle retreat.
           </h2>
         </div>
         <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
           <p>
-            Conveniently situated in the historic and academic hub of Navrongo, Your Hotel   sets a new benchmark for luxury and executive comfort across the Upper East Region.
+            Conveniently situated in {brand.town}, {brand.name} sets a new benchmark for luxury and executive comfort.
           </p>
           <p>
-            Whether visiting for business, academic research at CKT-UTAS, tourism excursions to Paga and Sirigu, or hosting an unforgettable wedding or high-level summit, Your Hotel   welcomes you with air-conditioned comfort, exquisite dining, and 24/7 uninterrupted power & security.
+            Whether visiting for business, leisure, or hosting an unforgettable wedding or high-level summit, {brand.name} welcomes you with air-conditioned comfort, exquisite dining, and 24/7 uninterrupted power & security.
           </p>
           <div className="pt-6 flex items-center gap-8 flex-wrap">
             <Stat label="Luxury Rooms & Suites" value="30+" />
@@ -130,7 +132,7 @@ export default function Index() {
           <SectionHeading eyebrow="Tours & Experiences" title="Explore Northern Heritage" copy="Curated local excursions, cultural experiences, and signature moments arranged by our front desk and tour concierge." />
 
           <div className="grid md:grid-cols-12 gap-6 md:gap-8">
-            {experiences.map((e, i) => {
+            {experiencesFor(brand.town).map((e, i) => {
               const span = [
                 "md:col-span-7 md:row-span-2 aspect-[4/5] md:aspect-[5/6]",
                 "md:col-span-5 aspect-[4/5]",
@@ -198,7 +200,7 @@ export default function Index() {
               >
                 <Quote className="w-10 h-10 text-primary mx-auto mb-6" aria-hidden="true" />
                 <p className="font-display text-2xl md:text-3xl lg:text-4xl leading-[1.3] italic">
-                  &ldquo;{r.quote}&rdquo;
+                  &ldquo;{r.quote.replace(/Your Hotel/g, brand.name)}&rdquo;
                 </p>
                 <div className="mt-10 flex flex-col items-center gap-2">
                   <div className="flex gap-1" aria-label={`${r.rating} out of 5 stars`}>
@@ -232,14 +234,9 @@ export default function Index() {
       {/* LOCATION */}
       <section className="container-prose py-32 grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <SectionHeading eyebrow="Location & Connectivity" title="In the heart of Navrongo" copy="Strategically located near major landmarks, academic institutions, and cultural destinations in the Kassena-Nankana district." />
+          <SectionHeading eyebrow="Location & Connectivity" title={`In the heart of ${brand.town}`} copy="Strategically located near major landmarks, business districts, and cultural destinations." />
           <div className="grid grid-cols-2 gap-6 mt-10">
-            {[
-              ["CKT-UTAS Navrongo Campus", "4 min drive"],
-              ["Navrongo Mud Cathedral", "6 min drive"],
-              ["Paga Crocodile Sanctuary", "18 min drive"],
-              ["Bolgatanga Town Center", "25 min drive"],
-            ].map(([place, time]) => (
+            {attractionsFor(brand.town).map(([place, time]) => (
               <div key={place} className="border-t border-border pt-4">
                 <div className="flex items-center gap-2 text-xs text-muted-foreground"><MapPin className="w-3 h-3" /> {time}</div>
                 <div className="font-display text-xl mt-1">{place}</div>
@@ -251,10 +248,9 @@ export default function Index() {
         <div className="relative aspect-square bg-secondary overflow-hidden flex items-center justify-center border border-border p-6 text-center">
           <div className="space-y-4">
             <MapPin className="w-12 h-12 text-primary mx-auto animate-bounce" />
-            <h3 className="font-display text-3xl">Your Hotel  </h3>
+            <h3 className="font-display text-3xl">{brand.name}</h3>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Navrongo, Upper East Region, Ghana.<br />
-              Near CKT-UTAS & Main Commercial District.
+              {brand.town}, Ghana.
             </p>
             <div className="pt-2 text-xs font-mono tracking-widest text-primary uppercase">
               Free Secured Parking & Shuttle Available
@@ -265,12 +261,12 @@ export default function Index() {
 
       {/* CTA */}
       <section className="relative h-[60vh] min-h-[480px] overflow-hidden">
-        <img src={heroVilla} alt="Your Hotel   Navrongo" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroVilla} alt={`${brand.name} ${brand.town}`} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/65" />
         <div className="relative h-full flex flex-col items-center justify-center text-center text-background container-prose">
-          <div className="eyebrow text-primary-glow mb-5">Plan Your Navrongo Stay</div>
+          <div className="eyebrow text-primary-glow mb-5">Plan Your {brand.town} Stay</div>
           <h2 className="font-display text-5xl md:text-7xl max-w-3xl leading-[1.05]">
-            Experience comfort in <em className="text-primary-glow not-italic">Navrongo</em>.
+            Experience comfort in <em className="text-primary-glow not-italic">{brand.town}</em>.
           </h2>
           <Link to="/booking" className="mt-10 btn-gilded">Book your room now</Link>
         </div>

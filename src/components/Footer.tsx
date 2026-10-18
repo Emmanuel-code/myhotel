@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { accolades } from "@/data/hotel";
+import { useHotelBrand } from "@/hooks/useHotelBrand";
+import { Sparkles } from "lucide-react";
 
 export default function Footer() {
+  const { brand, resetBrand } = useHotelBrand();
   return (
     <footer className="bg-foreground text-background mt-32">
       <div className="container-prose py-20">
@@ -13,14 +16,14 @@ export default function Footer() {
 
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="font-display text-3xl mb-3 text-primary">Your Hotel</div>
+            <div className="font-display text-3xl mb-3 text-primary">{brand.name}</div>
             <p className="text-background/80 max-w-md leading-relaxed text-sm">
-              Navrongo's premier luxury oasis in the Upper East Region of Ghana. Modern elegance, authentic Sahel & Savannah hospitality, executive suites, and world-class event hosting.
+{brand.town}'s premier luxury oasis in Ghana. Modern elegance, authentic hospitality, executive suites, and world-class event hosting.
             </p>
             <div className="mt-4 space-y-1 text-xs text-background/70">
               <div className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-primary" />
-                <span>Navrongo, Upper East Region, Ghana (Near CKT-UTAS)</span>
+                <span>{brand.town}, Ghana</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-primary" />
@@ -50,7 +53,7 @@ export default function Footer() {
           <div>
             <div className="eyebrow text-primary mb-5">Upper East Region</div>
             <p className="text-sm text-background/70 mb-4 leading-relaxed">
-              Ideally situated for travelers visiting Navrongo Cathedral, Paga Crocodile Sanctuary, Sirigu pottery village, and university academic conferences.
+              Ideally situated for travelers visiting {brand.town}&apos;s landmarks, cultural sites, and business districts.
             </p>
             <div className="text-xs text-primary uppercase tracking-widest font-mono">
               24/7 Front Desk &amp; Concierge
@@ -59,8 +62,13 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-background/15 flex flex-col md:flex-row justify-between text-xs text-background/50 gap-3">
-          <span>© {new Date().getFullYear()} Your Hotel, Navrongo. All rights reserved.</span>
-          <span>Privacy Policy · Terms of Service · Navrongo, Ghana</span>
+          <span>© {new Date().getFullYear()} {brand.name}, {brand.town}. All rights reserved.</span>
+          <span className="flex items-center gap-4">
+            <span>Privacy Policy · Terms of Service</span>
+            <button onClick={resetBrand} className="inline-flex items-center gap-1 hover:text-primary transition-colors" aria-label="Personalize this demo">
+              <Sparkles className="w-3 h-3" /> Personalize this demo
+            </button>
+          </span>
         </div>
       </div>
     </footer>
