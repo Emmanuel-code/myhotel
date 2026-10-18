@@ -33,13 +33,16 @@ import Notifications from "./pages/admin/Notifications";
 import ClaimOwnership from "./pages/admin/ClaimOwnership";
 import FloatingConcierge from "@/components/FloatingConcierge";
 import WelcomeModal from "@/components/WelcomeModal";
+import ThemePicker from "@/components/ThemePicker";
 import { BrandProvider } from "@/hooks/useHotelBrand";
+import { ThemeProvider } from "@/hooks/useDemoTheme";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrandProvider>
+    <ThemeProvider>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -78,9 +81,11 @@ const App = () => (
           </main>
           <FloatingConcierge />
           <WelcomeModal />
+          <ThemePicker />
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
+    </ThemeProvider>
     </BrandProvider>
   </QueryClientProvider>
 );

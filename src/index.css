@@ -220,3 +220,45 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-ken-burns { animation: none; transform: scale(1.1); }
 }
+
+/* ---- Demo color themes (prospect-facing). Overrides win over :root and .dark ---- */
+:root[data-theme="emerald"] {
+  --primary: 158 42% 36%;
+  --primary-foreground: 38 28% 97%;
+  --primary-glow: 158 55% 62%;
+  --ring: 158 42% 36%;
+  --gradient-gilded: linear-gradient(135deg, hsl(158 42% 36%), hsl(158 55% 62%));
+  --shadow-gilded: 0 20px 65px -12px hsl(158 42% 36% / 0.38);
+  --sidebar-primary: 158 42% 36%;
+  --sidebar-ring: 158 42% 36%;
+}
+:root[data-theme="sapphire"] {
+  --primary: 216 62% 52%;
+  --primary-foreground: 38 28% 97%;
+  --primary-glow: 216 85% 70%;
+  --ring: 216 62% 52%;
+  --gradient-gilded: linear-gradient(135deg, hsl(216 62% 52%), hsl(216 85% 70%));
+  --shadow-gilded: 0 20px 65px -12px hsl(216 62% 52% / 0.38);
+  --sidebar-primary: 216 62% 52%;
+  --sidebar-ring: 216 62% 52%;
+}
+:root[data-theme="burgundy"] {
+  --primary: 348 58% 42%;
+  --primary-foreground: 38 28% 97%;
+  --primary-glow: 348 72% 64%;
+  --ring: 348 58% 42%;
+  --gradient-gilded: linear-gradient(135deg, hsl(348 58% 42%), hsl(348 72% 64%));
+  --shadow-gilded: 0 20px 65px -12px hsl(348 58% 42% / 0.38);
+  --sidebar-primary: 348 58% 42%;
+  --sidebar-ring: 348 58% 42%;
+}
+:root[data-theme="onyx"] {
+  --primary: 240 10% 34%;
+  --primary-foreground: 38 28% 97%;
+  --primary-glow: 240 12% 62%;
+  --ring: 240 10% 34%;
+  --gradient-gilded: linear-gradient(135deg, hsl(240 10% 34%), hsl(240 12% 62%));
+  --shadow-gilded: 0 20px 65px -12px hsl(240 10% 34% / 0.38);
+  --sidebar-primary: 240 10% 34%;
+  --sidebar-ring: 240 10% 34%;
+}

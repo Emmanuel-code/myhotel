@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { accolades } from "@/data/hotel";
 import { useHotelBrand } from "@/hooks/useHotelBrand";
+import { useDemoTheme } from "@/hooks/useDemoTheme";
 import { Sparkles } from "lucide-react";
 
 export default function Footer() {
   const { brand, resetBrand } = useHotelBrand();
+  const { resetTheme } = useDemoTheme();
   return (
     <footer className="bg-foreground text-background mt-32">
       <div className="container-prose py-20">
@@ -65,7 +67,7 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} {brand.name}, {brand.town}. All rights reserved.</span>
           <span className="flex items-center gap-4">
             <span>Privacy Policy · Terms of Service</span>
-            <button onClick={resetBrand} className="inline-flex items-center gap-1 hover:text-primary transition-colors" aria-label="Personalize this demo">
+            <button onClick={() => { resetTheme(); resetBrand(); }} className="inline-flex items-center gap-1 hover:text-primary transition-colors" aria-label="Personalize this demo">
               <Sparkles className="w-3 h-3" /> Personalize this demo
             </button>
           </span>
