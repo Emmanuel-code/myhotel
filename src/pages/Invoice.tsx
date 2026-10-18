@@ -123,7 +123,7 @@ export default function Invoice() {
         <div className="bg-card border border-border p-10 md:p-16 print:border-0 print:p-8 max-w-3xl mx-auto">
           <div className="flex justify-between items-start mb-12 pb-8 border-b border-border">
             <div>
-              <div className="font-display text-3xl">SK Royal Hotel  </div>
+              <div className="font-display text-3xl">Your Hotel  </div>
               <div className="text-xs text-muted-foreground mt-1">
                 Hospitality Road<br />Navrongo, Upper East Region, Ghana<br />West Africa · Tax ID 1234567890
               </div>
@@ -199,7 +199,7 @@ export default function Invoice() {
           )}
 
           <div className="mt-16 pt-8 border-t border-border text-xs text-muted-foreground text-center">
-            Thank you for choosing SK Royal Hotel  . We look forward to welcoming you back to Navrongo.
+            Thank you for choosing Your Hotel  . We look forward to welcoming you back to Navrongo.
           </div>
         </div>
       </div>

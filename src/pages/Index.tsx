@@ -28,7 +28,7 @@ export default function Index() {
       <section className="relative h-screen min-h-[760px] w-full overflow-hidden">
         <img
           src={heroVilla}
-          alt="SK Royal Hotel   Navrongo at golden hour"
+          alt="Your Hotel   Navrongo at golden hour"
           width={1920}
           height={1280}
           className="absolute inset-0 w-full h-full object-cover animate-ken-burns"
@@ -91,17 +91,17 @@ export default function Index() {
       {/* INTRO */}
       <section className="container-prose pt-32 pb-24 grid lg:grid-cols-[1fr_1.4fr] gap-16 items-start">
         <div className="lg:sticky lg:top-32">
-          <div className="eyebrow mb-5">Welcome to SK Royal Hotel  </div>
+          <div className="eyebrow mb-5">Welcome to Your Hotel  </div>
           <h2 className="font-display text-5xl md:text-6xl leading-[1.05]">
             Navrongo&apos;s premier <em className="text-primary not-italic font-light">hospitality</em> and lifestyle retreat.
           </h2>
         </div>
         <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
           <p>
-            Conveniently situated in the historic and academic hub of Navrongo, SK Royal Hotel   sets a new benchmark for luxury and executive comfort across the Upper East Region.
+            Conveniently situated in the historic and academic hub of Navrongo, Your Hotel   sets a new benchmark for luxury and executive comfort across the Upper East Region.
           </p>
           <p>
-            Whether visiting for business, academic research at CKT-UTAS, tourism excursions to Paga and Sirigu, or hosting an unforgettable wedding or high-level summit, SK Royal Hotel   welcomes you with air-conditioned comfort, exquisite dining, and 24/7 uninterrupted power & security.
+            Whether visiting for business, academic research at CKT-UTAS, tourism excursions to Paga and Sirigu, or hosting an unforgettable wedding or high-level summit, Your Hotel   welcomes you with air-conditioned comfort, exquisite dining, and 24/7 uninterrupted power & security.
           </p>
           <div className="pt-6 flex items-center gap-8 flex-wrap">
             <Stat label="Luxury Rooms & Suites" value="30+" />
@@ -157,7 +157,7 @@ export default function Index() {
       <section className="container-prose py-32 space-y-32">
         <Pillar
           eyebrow="Dining & Lounge"
-          title="SK Royal Restaurant & Terrace"
+          title="Your Restaurant & Terrace"
           copy="Delicious local Ghanaian favorites, grilled guinea fowl, and rich continental cuisine prepared with fresh local produce."
           cta={{ to: "/restaurant", label: "View Restaurant Menu" }}
           image={restaurantImg}
@@ -251,7 +251,7 @@ export default function Index() {
         <div className="relative aspect-square bg-secondary overflow-hidden flex items-center justify-center border border-border p-6 text-center">
           <div className="space-y-4">
             <MapPin className="w-12 h-12 text-primary mx-auto animate-bounce" />
-            <h3 className="font-display text-3xl">SK Royal Hotel  </h3>
+            <h3 className="font-display text-3xl">Your Hotel  </h3>
             <p className="text-sm text-muted-foreground max-w-xs">
               Navrongo, Upper East Region, Ghana.<br />
               Near CKT-UTAS & Main Commercial District.
@@ -265,7 +265,7 @@ export default function Index() {
 
       {/* CTA */}
       <section className="relative h-[60vh] min-h-[480px] overflow-hidden">
-        <img src={heroVilla} alt="SK Royal Hotel   Navrongo" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroVilla} alt="Your Hotel   Navrongo" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/65" />
         <div className="relative h-full flex flex-col items-center justify-center text-center text-background container-prose">
           <div className="eyebrow text-primary-glow mb-5">Plan Your Navrongo Stay</div>

@@ -41,7 +41,7 @@ export default function AdminLayout({ children, title, eyebrow }: { children: Re
       {/* Mobile Top App Bar */}
       <div className="md:hidden flex items-center justify-between px-5 py-4 border-b border-white/10 bg-black/60 sticky top-0 z-40 backdrop-blur-md">
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-display text-lg tracking-wide text-amber-200">SK Royal Hotel  </span>
+          <span className="font-display text-lg tracking-wide text-amber-200">Your Hotel  </span>
           <span className="text-[9px] uppercase tracking-widest text-neutral-400">· Admin</span>
         </Link>
         <button
@@ -71,7 +71,7 @@ export default function AdminLayout({ children, title, eyebrow }: { children: Re
       >
         <div className="px-6 py-6 border-b border-white/5 flex items-center justify-between">
           <Link to="/" className="block">
-            <div className="font-display text-xl tracking-wide text-amber-200">SK Royal Hotel  </div>
+            <div className="font-display text-xl tracking-wide text-amber-200">Your Hotel  </div>
             <div className="text-[10px] tracking-[0.35em] uppercase text-neutral-500 mt-1">Navrongo · Operations</div>
           </Link>
           <button

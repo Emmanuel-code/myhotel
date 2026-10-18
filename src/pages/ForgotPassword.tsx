@@ -31,7 +31,7 @@ export default function ForgotPassword() {
       <Navigation />
       <section className="container-prose pt-40 pb-24 grid lg:grid-cols-2 gap-16 items-start">
         <div className="hidden lg:block sticky top-32">
-          <div className="eyebrow mb-4">SK Royal Hotel   · Navrongo</div>
+          <div className="eyebrow mb-4">Your Hotel   · Navrongo</div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] mt-auto">
             Recover your access.
           </h1>

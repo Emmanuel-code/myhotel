@@ -17,13 +17,13 @@ const DEFAULT_KNOWLEDGE: KnowledgeItem[] = [
   { id: "k-2", topic: "Payment Options", answer: "We accept Paystack Online (MTN MoMo, Telecel Cash, Visa/Mastercard) and Pay in Person (Cash GHS, POS terminal, MoMo at reception)." },
   { id: "k-3", topic: "Airport & Regional Transfers", answer: "Chauffeured transfers from Tamale Airport or Bolgatanga are available by reservation with our front desk." },
   { id: "k-4", topic: "Local Navrongo Excursions", answer: "We arrange guided visits to the historic Navrongo Mud Cathedral (Our Lady of Seven Sorrows), Paga Crocodile Pond, and Sirigu women's pottery village." },
-  { id: "k-5", topic: "SK Royal Restaurant & Breakfast", answer: "Breakfast is served from 06:30 to 10:30 AM in the main dining hall or delivered to private suites. We serve Sahel & Continental cuisine." },
+  { id: "k-5", topic: "Your Restaurant & Breakfast", answer: "Breakfast is served from 06:30 to 10:30 AM in the main dining hall or delivered to private suites. We serve Sahel & Continental cuisine." },
 ];
 
 export default function Concierge() {
   const [tab, setTab] = useState<"test" | "knowledge">("knowledge");
   const [messages, setMessages] = useState<Msg[]>([
-    { role: "assistant", content: "Welcome to SK Royal Hotel   Navrongo. How may I assist with your stay, dining, or reservations today?" },
+    { role: "assistant", content: "Welcome to Your Hotel   Navrongo. How may I assist with your stay, dining, or reservations today?" },
   ]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
@@ -74,13 +74,13 @@ export default function Concierge() {
         const match = knowledgeList.find(
           (k) => msg.toLowerCase().includes(k.topic.toLowerCase()) || k.answer.toLowerCase().includes(msg.toLowerCase())
         );
-        const reply = match ? match.answer : `Thank you for asking. SK Royal Hotel in Navrongo provides 24/7 guest service. For special requests regarding "${msg}", please contact the front desk at +233 50 123 4567.`;
+        const reply = match ? match.answer : `Thank you for asking. Your Hotel in Navrongo provides 24/7 guest service. For special requests regarding "${msg}", please contact the front desk at +233 50 123 4567.`;
         setMessages(m => [...m, { role: "assistant", content: reply }]);
       } else {
         setMessages(m => [...m, { role: "assistant", content: data.reply }]);
       }
     } catch {
-      setMessages(m => [...m, { role: "assistant", content: "I am happy to assist you with reservations, suites, dining, and local excursions at SK Royal Hotel  ." }]);
+      setMessages(m => [...m, { role: "assistant", content: "I am happy to assist you with reservations, suites, dining, and local excursions at Your Hotel  ." }]);
     } finally { setSending(false); }
   };
 

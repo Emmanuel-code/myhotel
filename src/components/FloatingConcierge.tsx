@@ -21,7 +21,7 @@ export default function FloatingConcierge() {
   const [messages, setMessages] = useState<Msg[]>([
     {
       role: "assistant",
-      content: "Hello and welcome to SK Royal Hotel Navrongo! I am your 24/7 AI Concierge. How may I assist you with reservations, dining, amenities, or local experiences today?",
+      content: "Hello and welcome to Your Hotel Navrongo! I am your 24/7 AI Concierge. How may I assist you with reservations, dining, amenities, or local experiences today?",
       time: now(),
     }
   ]);
@@ -79,15 +79,15 @@ export default function FloatingConcierge() {
       if (error || !data?.reply) {
         // Contextual offline fallback
         const lower = text.toLowerCase();
-        let fallback = "Thank you for asking! SK Royal Hotel in Navrongo, Ghana offers Executive Suites and Villas, gourmet Sahelian & Continental cuisine, full spa rituals, and flexible payment (Paystack & Pay in Person). Our front desk is available 24/7 at +233 (0) 50 123 4567.";
+        let fallback = "Thank you for asking! Your Hotel in Navrongo, Ghana offers Executive Suites and Villas, gourmet Sahelian & Continental cuisine, full spa rituals, and flexible payment (Paystack & Pay in Person). Our front desk is available 24/7 at +233 (0) 50 123 4567.";
         if (lower.includes("suite") || lower.includes("room") || lower.includes("price") || lower.includes("villa"))
           fallback = "We offer Executive Suites, Deluxe Rooms, Lake Suites, and Garden Villas from ₵850/night. Explore full photos and amenities on our Suites & Villas page, or reserve online anytime!";
         else if (lower.includes("dining") || lower.includes("food") || lower.includes("restaurant") || lower.includes("breakfast"))
-          fallback = "The SK Royal Restaurant & Lounge serves authentic Northern Ghanaian specialties alongside Continental gastronomy and curated wines. Breakfast can be delivered directly to your terrace.";
+          fallback = "The Your Restaurant & Lounge serves authentic Northern Ghanaian specialties alongside Continental gastronomy and curated wines. Breakfast can be delivered directly to your terrace.";
         else if (lower.includes("pay") || lower.includes("momo") || lower.includes("paystack"))
           fallback = "You can pay securely online with Paystack (MTN Mobile Money, Telecel Cash, Visa/Mastercard) or choose 'Pay in Person' — Cash, MoMo, or POS upon arrival at our front desk.";
         else if (lower.includes("attraction") || lower.includes("navrongo") || lower.includes("cathedral") || lower.includes("paga"))
-          fallback = "SK Royal Hotel is minutes from the Navrongo Mud Cathedral, CKT-UTAS, Paga Crocodile Sanctuary, and Sirigu Pottery & Art village. Our concierge organises guided regional excursions.";
+          fallback = "Your Hotel is minutes from the Navrongo Mud Cathedral, CKT-UTAS, Paga Crocodile Sanctuary, and Sirigu Pottery & Art village. Our concierge organises guided regional excursions.";
 
         setMessages(m => [...m, { role: "assistant", content: fallback, time: now() }]);
       } else {
@@ -146,7 +146,7 @@ export default function FloatingConcierge() {
           <aside
             role="dialog"
             aria-modal="true"
-            aria-label="SK Royal Hotel AI Concierge"
+            aria-label="Your Hotel AI Concierge"
             className="fixed bottom-6 right-6 z-50 w-[92vw] sm:w-[400px] h-[580px] max-h-[85vh] bg-background border border-border/80 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300"
           >
             {/* Header */}
@@ -156,7 +156,7 @@ export default function FloatingConcierge() {
                   <Bot className="w-5 h-5 text-amber-200" />
                 </div>
                 <div>
-                  <div className="font-display text-base text-primary-glow leading-tight">SK Royal AI Concierge</div>
+                  <div className="font-display text-base text-primary-glow leading-tight">Your AI Concierge</div>
                   <div className="text-[10px] text-background/60 uppercase tracking-[0.2em] flex items-center gap-1.5 mt-0.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
                     Always Online · Navrongo

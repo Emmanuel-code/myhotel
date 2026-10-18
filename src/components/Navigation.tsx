@@ -47,9 +47,9 @@ export default function Navigation({ transparent = false }: { transparent?: bool
         )}
       >
         <div className="container-prose flex items-center justify-between">
-          <Link to="/" className="group" aria-label="SK Royal Hotel Homepage">
+          <Link to="/" className="group" aria-label="Your Hotel Homepage">
             <div className="flex flex-col leading-none">
-              <span className="font-display text-2xl tracking-wide">SK Royal Hotel</span>
+              <span className="font-display text-2xl tracking-wide">Your Hotel</span>
               <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground">
                 Navrongo · Upper East · Ghana
               </span>

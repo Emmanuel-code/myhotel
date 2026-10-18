@@ -8,7 +8,7 @@ export default function ProtectedRoute({ children }: { children: JSX.Element }) 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="font-display text-2xl text-muted-foreground animate-pulse">SK Royal Hotel  </div>
+        <div className="font-display text-2xl text-muted-foreground animate-pulse">Your Hotel  </div>
       </div>
     );
   }

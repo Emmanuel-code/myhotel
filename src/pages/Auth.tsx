@@ -51,7 +51,7 @@ export default function Auth() {
           },
         });
         if (error) throw error;
-        toast.success("Welcome to SK Royal Hotel. Please check your email to verify your account.");
+        toast.success("Welcome to Your Hotel. Please check your email to verify your account.");
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
@@ -79,7 +79,7 @@ export default function Auth() {
     <div className="min-h-screen bg-background text-foreground flex flex-col justify-between p-6">
       <div className="max-w-md w-full mx-auto my-auto py-12">
         <div className="text-center mb-8">
-          <div className="eyebrow mb-4">SK Royal Hotel · Navrongo</div>
+          <div className="eyebrow mb-4">Your Hotel · Navrongo</div>
           <h1 className="font-display text-4xl mb-3">
             {mode === "signin" ? "Guest & Staff Portal" : "Create an Account"}
           </h1>
@@ -186,7 +186,7 @@ export default function Auth() {
               </div>
             )}
             <Field label="Email" type="email" value={email} onChange={setEmail} required />
-            
+
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="auth-password" className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground">Password</label>

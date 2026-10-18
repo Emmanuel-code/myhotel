@@ -70,7 +70,7 @@ export default function Events() {
             <div className="eyebrow mb-5">Begin a conversation</div>
             <h2 className="font-display text-4xl md:text-5xl leading-[1.05] mb-6">Tell us about your day.</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Our events team personally orchestrates every wedding, academic summit, and private reception at SK Royal Hotel   in Navrongo. Share a few details below and we will be in touch within 24 hours.
+              Our events team personally orchestrates every wedding, academic summit, and private reception at Your Hotel   in Navrongo. Share a few details below and we will be in touch within 24 hours.
             </p>
             <div className="mt-10 space-y-3 text-sm">
               <div className="flex justify-between border-b border-border pb-3"><span className="text-muted-foreground">Events Director</span><span>Ama Owusu</span></div>

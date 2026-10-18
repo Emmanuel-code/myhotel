@@ -55,7 +55,7 @@ export const rooms: Room[] = [
   },
   {
     id: "royal-penthouse",
-    name: "SK Royal Penthouse",
+    name: "Your Penthouse",
     category: "Penthouse",
     view: "City",
     price: 850,
@@ -93,9 +93,9 @@ export const experiences = [
 ];
 
 export const reviews = [
-  { id: 1, name: "Dr. Kwesi Mensah", origin: "Accra / CKT-UTAS Visiting Fellow", quote: "SK Royal Hotel   brings a standard of luxury and efficiency to Navrongo that matches top hotels in Accra. Seamless Wi-Fi, comfortable beds, and top-tier service.", rating: 5 },
+  { id: 1, name: "Dr. Kwesi Mensah", origin: "Accra / CKT-UTAS Visiting Fellow", quote: "Your Hotel   brings a standard of luxury and efficiency to Navrongo that matches top hotels in Accra. Seamless Wi-Fi, comfortable beds, and top-tier service.", rating: 5 },
   { id: 2, name: "Amina Sulemana", origin: "Tamale", quote: "The best place to stay in the Upper East. The food is exceptional, and the front desk staff went above and beyond to organize our transport to Paga.", rating: 5 },
-  { id: 3, name: "Marcus Van Der Berg", origin: "Netherlands (NGO Director)", quote: "Quiet, secure, and wonderfully managed. After long days of fieldwork, returning to SK Royal Hotel   felt like a true oasis.", rating: 5 },
+  { id: 3, name: "Marcus Van Der Berg", origin: "Netherlands (NGO Director)", quote: "Quiet, secure, and wonderfully managed. After long days of fieldwork, returning to Your Hotel   felt like a true oasis.", rating: 5 },
   { id: 4, name: "Grace & David Addo", origin: "Kumasi", quote: "We held our family anniversary gathering here. The conference hall, catering, and guest rooms were all 10/10.", rating: 5 },
 ];
 

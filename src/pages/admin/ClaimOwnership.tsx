@@ -28,7 +28,7 @@ export default function ClaimOwnership() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0d0d10] text-neutral-100 p-6">
       <div className="max-w-md text-center">
-        <div className="text-[10px] uppercase tracking-[0.4em] text-amber-200/80 mb-3">SK Royal Hotel   · Operations</div>
+        <div className="text-[10px] uppercase tracking-[0.4em] text-amber-200/80 mb-3">Your Hotel   · Operations</div>
         <h1 className="font-display text-4xl mb-4">Claim ownership</h1>
         <p className="text-sm text-neutral-400 leading-relaxed mb-8">
           This estate has not yet been assigned an owner. The first staff member to claim ownership receives every operational role.

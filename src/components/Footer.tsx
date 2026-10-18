@@ -13,7 +13,7 @@ export default function Footer() {
 
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="font-display text-3xl mb-3 text-primary">SK Royal Hotel  </div>
+            <div className="font-display text-3xl mb-3 text-primary">Royal Hotel  </div>
             <p className="text-background/80 max-w-md leading-relaxed text-sm">
               Navrongo's premier luxury oasis in the Upper East Region of Ghana. Modern elegance, authentic Sahel & Savannah hospitality, executive suites, and world-class event hosting.
             </p>
@@ -27,8 +27,8 @@ export default function Footer() {
                 <span>+233 (0) 50 123 4567 / +233 (0) 24 000 0000</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-primary" />
-                <span>reservations@SKhotel.com</span>
+                <Mail className="w-3.5 h-3.5 text-primary" />SK
+                <span>reservations@yourhotel.com</span>
               </div>
             </div>
             <div className="flex gap-5 mt-6">
@@ -43,7 +43,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-background/80">
               <li><Link to="/rooms" className="link-underline">Executive Rooms & Suites</Link></li>
               <li><Link to="/booking" className="link-underline">Book a Stay</Link></li>
-              <li><Link to="/restaurant" className="link-underline">SK Royal Restaurant &amp; Lounge</Link></li>
+              <li><Link to="/restaurant" className="link-underline">Your Restaurant &amp; Lounge</Link></li>
               <li><Link to="/spa" className="link-underline">Wellness & Pool</Link></li>
               <li><Link to="/events" className="link-underline">Conferences & Receptions</Link></li>
             </ul>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-background/15 flex flex-col md:flex-row justify-between text-xs text-background/50 gap-3">
-          <span>© {new Date().getFullYear()} SK Royal Hotel  , Navrongo. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Your Hotel  , Navrongo. All rights reserved.</span>
           <span>Privacy Policy · Terms of Service · Navrongo, Ghana</span>
         </div>
       </div>

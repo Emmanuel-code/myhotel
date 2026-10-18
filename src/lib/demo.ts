@@ -1,6 +1,6 @@
 /**
  * ─────────────────────────────────────────────────────────────────
- * SK Royal Hotel   — Demo Mode Configuration
+ * Your Hotel   — Demo Mode Configuration
  * ─────────────────────────────────────────────────────────────────
  *
  * Controlled by VITE_DEMO_MODE in your .env file:
